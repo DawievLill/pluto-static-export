@@ -5,33 +5,7 @@ using Markdown
 using InteractiveUtils
 
 # ╔═╡ c4cccb7a-7d16-4dca-95d9-45c4115cfbf0
-begin
-    import Pkg
-    Pkg.activate(mktempdir())
-    Pkg.add([
-        Pkg.PackageSpec(name="BenchmarkTools", version="1"),
-        Pkg.PackageSpec(name="CSV", version="0.9"),
-        Pkg.PackageSpec(name="DataFrames", version="1"),
-        Pkg.PackageSpec(name="Distances", version="0.10"),
-        Pkg.PackageSpec(name="Distributions", version="0.25"),
-        Pkg.PackageSpec(name="HypothesisTests", version="0.10"),
-        Pkg.PackageSpec(name="HTTP", version="0.9"),
-        Pkg.PackageSpec(name="KernelDensity", version="0.6"),
-        Pkg.PackageSpec(name="MCMCChains", version="5"),
-        Pkg.PackageSpec(name="MLDataUtils", version="0.5"),
-        Pkg.PackageSpec(name="Plots", version="1"),
-        Pkg.PackageSpec(name="PlutoUI", version="0.7"),
-        Pkg.PackageSpec(name="RDatasets", version="0.7"),
-        Pkg.PackageSpec(name="StateSpaceModels", version="0.5"),
-        Pkg.PackageSpec(name="StatsBase", version="0.33"),
-        Pkg.PackageSpec(name="StatsPlots", version="0.14"),
-        Pkg.PackageSpec(name="Turing", version="0.18"),
-        Pkg.PackageSpec(name="UrlDownload", version="1"),
-    ])
-    using BenchmarkTools, CSV, DataFrames, Distances, Distributions, HypothesisTests, HTTP, KernelDensity, LinearAlgebra, MCMCChains, MLDataUtils, Plots, PlutoUI, Random, RDatasets, StateSpaceModels, Statistics, StatsBase, StatsPlots, Turing, UrlDownload
-end
-
-
+using BenchmarkTools, CSV, DataFrames, Distances, Distributions, HypothesisTests, HTTP, KernelDensity, LinearAlgebra, MCMCChains, MLDataUtils, Plots, PlutoUI, Random,  RDatasets, StateSpaceModels, Statistics, StatsBase, StatsPlots, Turing, UrlDownload
 
 # ╔═╡ 09a9d9f9-fa1a-4192-95cc-81314582488b
 html"""
