@@ -1,11 +1,26 @@
 ### A Pluto.jl notebook ###
-# v0.16.0
+# v0.16.1
 
 using Markdown
 using InteractiveUtils
 
 # ╔═╡ c4cccb7a-7d16-4dca-95d9-45c4115cfbf0
-using BenchmarkTools, CSV, DataFrames, Distributions, KernelDensity, LinearAlgebra, Plots, PlutoUI, Random, SparseArrays, StatsBase, Statistics, UrlDownload
+begin
+    import Pkg
+    Pkg.activate(mktempdir())
+    Pkg.add([
+        Pkg.PackageSpec(name="BenchmarkTools", version="1"),
+        Pkg.PackageSpec(name="CSV", version="0.9"),
+        Pkg.PackageSpec(name="DataFrames", version="1"),
+        Pkg.PackageSpec(name="Distributions", version="0.25"),
+        Pkg.PackageSpec(name="KernelDensity", version="0.6"),
+        Pkg.PackageSpec(name="Plots", version="1"),
+        Pkg.PackageSpec(name="PlutoUI", version="0.7"),
+        Pkg.PackageSpec(name="StatsBase", version="0.33"),
+        Pkg.PackageSpec(name="UrlDownload", version="1"),
+    ])
+    using BenchmarkTools, CSV, DataFrames, Distributions, KernelDensity, LinearAlgebra, Plots, PlutoUI, Random, SparseArrays, StatsBase, Statistics, UrlDownload
+end
 
 # ╔═╡ 09a9d9f9-fa1a-4192-95cc-81314582488b
 html"""
@@ -602,39 +617,6 @@ md""" Just as in the previous lectures, it is possible to compute posterior mean
 # ╔═╡ 878760b6-0a98-4955-b061-6e56ca83dfbf
 md""" Now let us move to an example of a BVAR in R. There are many packages that one could use here. However, I am only going to illustrate one. For your project you could use any package you want. """
 
-# ╔═╡ 00000000-0000-0000-0000-000000000001
-PLUTO_PROJECT_TOML_CONTENTS = """
-[deps]
-BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
-CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
-DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
-Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
-KernelDensity = "5ab0869b-81aa-558d-bb23-cbf5423bbe9b"
-LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
-Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
-PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
-Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
-SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
-Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
-StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
-UrlDownload = "856ac37a-3032-4c1c-9122-f86d88358c8b"
-
-[compat]
-BenchmarkTools = "~1.2.0"
-CSV = "~0.9.6"
-DataFrames = "~1.2.2"
-Distributions = "~0.24.18"
-KernelDensity = "~0.6.3"
-Plots = "~1.22.6"
-PlutoUI = "~0.7.16"
-StatsBase = "~0.33.11"
-UrlDownload = "~1.0.0"
-"""
-
-# ╔═╡ 00000000-0000-0000-0000-000000000002
-PLUTO_MANIFEST_TOML_CONTENTS = """
-"""
-
 # ╔═╡ Cell order:
 # ╟─09a9d9f9-fa1a-4192-95cc-81314582488b
 # ╟─41eb90d1-9262-42b1-9eb2-d7aa6583da17
@@ -692,5 +674,3 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 # ╟─abe69a74-74ff-4cc5-9a93-90bd36c48e8a
 # ╟─4e402c6a-4e72-4b3d-999e-39c6c92dae6a
 # ╟─878760b6-0a98-4955-b061-6e56ca83dfbf
-# ╟─00000000-0000-0000-0000-000000000001
-# ╟─00000000-0000-0000-0000-000000000002
